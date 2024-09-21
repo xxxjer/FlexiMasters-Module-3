@@ -1,0 +1,33 @@
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>Financial Wealth Management Portal</h2>
+    </div>
+</body>
+=================
+from flask import Flask,render_template,request
+
+app = Flask(__name__)
+
+@app.route("/",methods=["GET","POST"])
+def index():
+    return(render_template("index.html"))
+
+if __name__ == "__main__":
+    app.run()
+==========================
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>THe predicted DBS share price is {{r}}</h2>
+        <form action="/" method="post">
+            <p><input type="submit" value="Main"></p>
+        </form>
+    </div>
+</body>
